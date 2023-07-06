@@ -1,0 +1,361 @@
+1.Create function for a given string, get the middle 5 characters
+ Example :-
+
+ Input String :- pythonscripts
+
+ Expected Output :- onscr
+
+"""""
+
+#Function Declare
+def printMiddleCharacter(str,chara):
+    len_str=len(str)
+    middle_index=len_str // 2
+    if len_str % 2 ==0:
+        first_char=middle_index-chara // 2
+        last_char=first_char+chara
+    else:
+        first_char=middle_index-chara // 2
+        last_char= first_char+chara
+
+    if middle_chara_count >= 1:
+        print("****")
+        middle_char = str[first_char:last_char]
+        print(f'Middle {chara} character are:-{middle_char}')
+    else:
+        middle_char = str[first_char:last_char]
+        print(f'Middle {chara} character are:-{middle_char}')
+        print("Not getting middle character of",Input_Char)
+
+#User Prompt
+Input_Char=input("Enter The Character:- ")
+#User Prompt
+middle_chara_count=int(input("How many middle character required:- "))
+if middle_chara_count<=len(Input_Char):
+    #function call
+    printMiddleCharacter(Input_Char,middle_chara_count)
+else:
+    print("Length of string is less than the middle character count")
+
+
+
+# Output:-
+
+#string "pythonscripts" 5 middle characters output:- onscr
+#string "Administrator" 5 middle characters output:- nistr
+#string "Entertainment" 5 middle characters output:- rtain
+#string "Development" 5 middle characters output:- elopm
+
+
+'''''
+# *************--Thank You!!--:)**************
+'''''
+
+
+"""""
+
+2.Create a merge list with the given condition
+
+ Part 1 : Given 2 lists as below. From List 1, pick only those values that are divisible of 5.
+ and from List 2, pick the values that are divisible of 2.
+ 
+ Merge these values to form a single output as mentioned
+ 
+                                 List 1 : [10, 50, 21, 46, 35]
+                                 List 2 : [58, 88, 76, 100, 65]
+ 
+ Expected Output : Merged_List : [10, 50, 35, 58, 88, 76, 100]
+
+ Part 2 : Once the merge list is created, arrange the values in descending order
+ 
+ Expected Output : Merged_List_Desc : [100, 88, 76, 58, 50, 35, 10]
+
+"""""
+
+
+#Declare function
+def pick_up_numbers():
+    try:
+        num_1 = [float(num) for num in (input("Enter the comma separated list:-")).split(",")]
+        divisor = float(input("Enter divisor:-"))
+        if divisor>=1:
+            divisible_1 = [num for num in num_1 if num % divisor == 0]
+            return (divisible_1)
+        else:
+            print("Enter valid divisor")
+    except ValueError:
+        print("Invalid input, enter the valid numbers.")
+        return
+    except ZeroDivisionError:
+        print("Invalid divisor, enter the valid divisor.")
+        return
+
+
+result_1 = pick_up_numbers()
+print("**********")
+result_2= pick_up_numbers()
+
+#Merge Two List
+merge_list=(result_1+result_2)
+merge_list=[int(num) for num in merge_list]
+print("Merged_List :- ",merge_list)
+
+#Descending order of merge list
+merge_list.sort(reverse=True)
+print("Merged_List_Descending_order :- ",merge_list)
+
+
+'''''
+# *************--Thank You!!--:)**************
+'''''
+
+"""""
+
+# Output:-
+
+# List_01 :-  [10, 50, 35]                       #List 1 : [10, 50, 21, 46, 35]
+
+# **********
+
+# List_02 :- [58, 88, 76, 100]                   #List 2 : [58, 88, 76, 100, 65]
+
+# **********
+
+# Merged_List :- [10, 50, 35, 58, 88, 76, 100]
+
+# **********
+
+# Merged_List_Desc :-  [100, 88, 76, 58, 50, 35, 10]
+
+# *************--Thank You!!--:)**************
+
+"""""
+
+"""""
+
+3.	Create Python class with 2 instances of the same class and display attribute values of both instances
+1)	Write a Python Class named Person with the attributes FirstName, MiddleName, LastName, Gender
+2)	Create 2 instances of the Person class and assign values to its attributes
+3)	Display attributes names along with values from both the instances
+
+"""""
+
+# Solution:-
+
+#Person class
+class Person:
+    def _init_(self,first_name,middle_name,last_name,gender,addresses):      #function declare
+        self.first_name = first_name
+        self.middle_name = middle_name
+        self.last_name = last_name
+        self.gender = gender
+        self.addresses=addresses
+    def display_person(self):                                        #f for formatted string literals
+        address_info=""
+        for address in self.addresses:
+            address_info += f'\nAddress:{address.display_address()}'
+        return f'First Name: {self.first_name}\nMiddle Name: {self.middle_name}\nLast Name: {self.last_name}\nGender: {self.gender}{address_info}'
+
+
+#Address class
+class Address:
+    def _init_(self,street,city,state,pin_code):                          #function declare
+        self.street = street
+        self.city = city
+        self.state = state
+        self.pin_code = pin_code
+    def display_address(self):
+        return f'{self.street},{self.city},{self.state},{self.pin_code}'     #f for formatted string literals
+#objects of Address class
+Address_01= Address('HighStreet','Pune','Maharashtra','-411035.')
+Address_02= Address('Main Chowk','Shivajinagar','Maharashtra','-411036.')
+Address_03=Address('Main Road','Pune','Maharashtra','-423102')
+Address_04=Address('Main Chowk','Beed','Maharashtra','-423102')
+# person objects with multiple addresses
+Adrress_list=[Address_01,Address_02,Address_03]
+#objects of Person class
+person1 = Person ("Jaffer", "Tom", "Scott", "Male",Adrress_list)
+person2 = Person ("Janny", "Doe", "Marek", "Female",Adrress_list)
+person3 = Person ("John", "Sir", "Mar", "male",[Address_04])
+person4=Person("Jaffer","Jack","Dat","Male",[Address_02,Address_01])
+print("Person1 attributes with multiple address:-")
+#funtion calling
+print(person1.display_person())
+print("**************")
+print("Person2 attributes with multiple address:-")
+print(person2.display_person())
+print("**************")
+print("Person3 Attributes with one address:-")
+print(person3.display_person())
+print("**************")
+print("Person4 Attributes with two address:-")
+print(person4.display_person())
+print("**************")
+"""""
+
+# Output:-
+
+Person1 attributes with multiple address:-
+First Name: Jaffer
+Middle Name: Tom
+Last Name: Scott
+Gender: Male
+Address:HighStreet,Pune,Maharashtra,-411035.
+Address:Main Chowk,Shivajinagar,Maharashtra,-411036.
+Address:Main Road,Pune,Maharashtra,-423102
+**************
+Person2 attributes with multiple address:-
+First Name: Janny
+Middle Name: Doe
+Last Name: Marek
+Gender: Female
+Address:HighStreet,Pune,Maharashtra,-411035.
+Address:Main Chowk,Shivajinagar,Maharashtra,-411036.
+Address:Main Road,Pune,Maharashtra,-423102
+**************
+Person3 Attributes with one address:-
+First Name: John
+Middle Name: Sir
+Last Name: Mar
+Gender: male
+Address:Main Chowk,Beed,Maharashtra,-423102
+**************
+Person4 Attributes with two address:-
+First Name: Jaffer
+Middle Name: Jack
+Last Name: Dat
+Gender: Male
+Address:Main Chowk,Shivajinagar,Maharashtra,-411036.
+Address:HighStreet,Pune,Maharashtra,-411035.
+**************
+
+
+# *************--Thank You!!--:)**************
+
+"""""
+*******************
+"""""
+
+4.	Create a sample solution to load data from csv file and display the employee details
+1)	Create a sample csv file with column names EmployeeID, EmployeeName, DateofJoining, Department, EmailAddress.
+2)	Let the file contain at least 25 rows of data (can be random data).
+3)	Read the contents of this file and display the data
+
+"""""
+# Solution :-
+
+#Import csv package
+import csv
+#Opens the file named Employee_Details.csv using 'open' funtion
+with open(r"Employee_Details.csv") as file:
+    # CSV reader object
+    reader = csv.reader(file)
+    # 'for' loop iterates over each row in 'reader' object
+    for row in reader:
+        # 'print(row)' used to display each row in the console
+        print(row)
+
+
+"""""
+
+Output:-
+
+['EmployeeID', 'EmployeeName', 'Department', 'Salary (In K)', 'Date of Joining', 'Email Address']
+['1', 'Tom ', 'ETA', '10000', '1/1/2022', 'abc@gmail.com']
+['2', 'Bob', 'ADM', '20000', '2/1/2022', 'xyz@gmail.com']
+['3', 'Jack', 'ECS', '30000', '3/1/2022', 'efg@gmail.com']
+['4', 'Harry', 'ETA', '40000', '4/1/2022', 'abc@gmail.com']
+['5', 'Tom1 ', 'ADM', '50000', '5/1/2022', 'xyz@gmail.com']
+['6', 'Bob2', 'ECS', '60000', '6/1/2022', 'efg@gmail.com']
+['7', 'Jack3', 'ETA', '70000', '7/1/2022', 'abc@gmail.com']
+['8', 'Harry4', 'ADM', '80000', '8/1/2022', 'xyz@gmail.com']
+['9', 'Tom 5', 'ECS', '90000', '9/1/2022', 'efg@gmail.com']
+['10', 'Bob6', 'ETA', '100000', '10/1/2022', 'abc@gmail.com']
+['11', 'Jack7', 'ADM', '110000', '11/1/2022', 'xyz@gmail.com']
+['12', 'Harry8', 'ECS', '120000', '12/1/2022', 'efg@gmail.com']
+['13', 'Tom9', 'ETA', '130000', '1/1/2023', 'abc@gmail.com']
+['14', 'Bob10', 'ADM', '140000', '2/1/2023', 'xyz@gmail.com']
+['15', 'Jack11', 'ECS', '150000', '3/1/2023', 'efg@gmail.com']
+['16', 'Harry12', 'ETA', '160000', '4/1/2023', 'abc@gmail.com']
+['17', 'Tom13', 'ADM', '170000', '5/1/2023', 'xyz@gmail.com']
+['18', 'Bob14', 'ECS', '180000', '6/1/2023', 'efg@gmail.com']
+['19', 'Jack15', 'ETA', '190000', '7/1/2023', 'abc@gmail.com']
+['20', 'Harry16', 'ADM', '200000', '8/1/2023', 'xyz@gmail.com']
+['21', 'Tom17', 'ECS', '210000', '9/1/2023', 'efg@gmail.com']
+['22', 'Bob18', 'ETA', '220000', '10/1/2023', 'abc@gmail.com']
+['23', 'Jack19', 'ADM', '230000', '11/1/2023', 'xyz@gmail.com']
+['24', 'Harry20', 'ECS', '240000', '12/1/2023', 'efg@gmail.com']
+['25', 'Tom21', 'ETA', '250000', '1/1/2024', 'abc@gmail.com']
+
+
+# *************--Thank You!!--:)**************
+
+"""""
+**************
+"""""
+# 5.	
+# 1)	Create a function to take JSON input along with another input parameter which will be a key name
+# For example :
+# JSON Input : [{“ProductID”:”1”, “ProductName”:”Car”}, {“ProductID”:”2”, “ProductName”:”Bus”}]
+# functionA(JSON input, keyName)
+
+# 2)	Based on the key name passed, the function should retrieve the values for that particular key
+# In the above sample, if the function is called as below
+
+# functionA(JSON Input, ProductName)  The function should give the Output as Car, Bus
+# functionA(JSON Input, ProductID)  The function should give the Output as 1, 2
+# Create Python function for write data into the text file
+# Check if the file exists then open the file in append mode and add data otherwise create new file in write mode
+"""""
+#
+# Solution:-
+
+#import package
+import json
+# This function return key value from json
+def Return_Key_value(json_input,key_name):
+    values=[]
+    for item in json_input:
+        if key_name in item:
+            values.append(item[key_name])
+    return values
+
+# This function write data to text file
+def write_data_to_txtFile(data):
+    data=var_03
+    file_exists=True
+# if the file is present then data is in append mode else it's create a new file and data added.
+    mode ="a" if file_exists else "w"
+    with open("JSON_data.txt", mode) as file:
+        file.write(data)
+        file.write('\n')
+    print("Data saved successfully.")
+
+json_input =[{"ProductID":"1", "ProductName":"Car"},
+             {"ProductID":"2", "ProductName":"Bus"}]
+var=input("Enter KeyName:-")
+if var in json_input[0]:
+    var_01 = Return_Key_value(json_input,var)
+    var_03=(var)+" "+(str(var_01))
+    print(var_03)
+    #function calling
+    write_data_to_txtFile(var_03)
+else:
+    print("Key Name Not Found")
+
+
+
+"""""
+
+# Output:
+First_case:-Enter KeyName:-ProductID
+            ProductID ['1', '2']
+            Data saved successfully.
+
+Second_case:-Enter KeyName:-Van
+             Key Name Not Found
+
+# *************--Thank You!!--:)**************
+
+"""""
+******************
