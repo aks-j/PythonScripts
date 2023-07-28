@@ -41,10 +41,10 @@ else:
 
 # Output:-
 
-#string "pythonscripts" 5 middle characters output:- onscr
-#string "Administrator" 5 middle characters output:- nistr
-#string "Entertainment" 5 middle characters output:- rtain
-#string "Development" 5 middle characters output:- elopm
+string "pythonscripts" 5 middle characters output:- onscr
+string "Administrator" 5 middle characters output:- nistr
+string "Entertainment" 5 middle characters output:- rtain
+string "Development" 5 middle characters output:- elopm
 
 
 '''''
