@@ -1,15 +1,15 @@
-# 1)	Create a function to take JSON input along with another input parameter which will be a key name
-# For example :
-# JSON Input : [{“ProductID”:”1”, “ProductName”:”Car”}, {“ProductID”:”2”, “ProductName”:”Bus”}]
-# functionA(JSON input, keyName)
+1)	Create a function to take JSON input along with another input parameter which will be a key name
+For example :
+JSON Input : [{“ProductID”:”1”, “ProductName”:”Car”}, {“ProductID”:”2”, “ProductName”:”Bus”}]
+functionA(JSON input, keyName)
 
-# 2)	Based on the key name passed, the function should retrieve the values for that particular key
-# In the above sample, if the function is called as below
+2)	Based on the key name passed, the function should retrieve the values for that particular key
+In the above sample, if the function is called as below
 
-# functionA(JSON Input, ProductName)  The function should give the Output as Car, Bus
-# functionA(JSON Input, ProductID)  The function should give the Output as 1, 2
-# Create Python function for write data into the text file
-# Check if the file exists then open the file in append mode and add data otherwise create new file in write mode
+functionA(JSON Input, ProductName)  The function should give the Output as Car, Bus
+functionA(JSON Input, ProductID)  The function should give the Output as 1, 2
+Create Python function for write data into the text file
+Check if the file exists then open the file in append mode and add data otherwise create new file in write mode
 """""
 
 # Solution:-
