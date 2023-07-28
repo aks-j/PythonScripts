@@ -5,7 +5,6 @@ Create a merge list with the given condition
  Merge these values to form a single output as mentioned
                                  List 1 : [10, 50, 21, 46, 35]
                                  List 2 : [58, 88, 76, 100, 65]
- 
  Expected Output : Merged_List : [10, 50, 35, 58, 88, 76, 100]
 
  Part 2 : Once the merge list is created, arrange the values in descending order
@@ -46,9 +45,6 @@ merge_list.sort(reverse=True)
 print("Merged_List_Descending_order :- ",merge_list)
 
 
-'''''
-# *************--Thank You!!--:)**************
-'''''
 
 """""
 
